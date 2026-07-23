@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+
+# Editor / IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.*
+
+# NeMo server logs
+nemo_configs/server.log
+
+# Evaluation results
+results/
+eval_results/
+*.csv
+*.jsonl
+
+# Cloned repos
+.eval-hub-contrib/
+
+# Jupyter
+.ipynb_checkpoints/
+.chainlit/
+
+# OS
+.DS_Store
+
+# Claude Code
+.claude/

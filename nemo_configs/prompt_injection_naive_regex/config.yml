@@ -1,0 +1,58 @@
+rails:
+  input:
+    flows:
+      - regex check input
+
+  config:
+    regex_detection:
+      input:
+        case_insensitive: true
+        patterns:
+          # Direct instruction override
+          - "ignore (all |any )?(previous|prior|above|earlier|preceding) (instructions|prompts|rules|directions|guidelines)"
+          - "disregard (all |any )?(previous|prior|above|earlier|preceding) (instructions|prompts|rules|directions|guidelines)"
+          - "forget (all |any )?(previous|prior|above|earlier|preceding) (instructions|prompts|rules|directions|guidelines)"
+          - "override (all |any )?(previous|prior|above|earlier|preceding) (instructions|prompts|rules|directions|guidelines)"
+
+          # System prompt extraction
+          - "reveal (your |the )?(system|initial|original|hidden) (prompt|instructions|message|configuration)"
+          - "show (me )?(your |the )?(system|initial|original|hidden) (prompt|instructions|message|configuration)"
+          - "what (is|are|was|were) (your |the )?(system|initial|original|hidden) (prompt|instructions|message|configuration)"
+          - "repeat (your |the )?(system|initial|original|hidden) (prompt|instructions|message|configuration)"
+          - "print (your |the )?(system|initial|original|hidden) (prompt|instructions|message|configuration)"
+
+          # Roleplay / persona hijack
+          - "you are now (a |an )?[A-Z]"
+          - "pretend (you are|to be|you're) "
+          - "act as (a |an |if )?"
+          - "roleplay as "
+          - "from now on,? you (are|will|must|should)"
+          - "switch (to|into) .* mode"
+          - "enter .* mode"
+
+          # DAN and known jailbreak names
+          - "\\bDAN\\b"
+          - "\\bDo Anything Now\\b"
+          - "\\bjailbreak(ed)?\\b"
+          - "\\bdevmode\\b"
+          - "\\bdev mode\\b"
+          - "developer mode"
+
+          # Boundary / delimiter manipulation
+          - "---+\\s*(system|end|new|start)"
+          - "\\[INST\\]"
+          - "<<SYS>>"
+          - "<\\|im_start\\|>"
+          - "\\[SYSTEM\\]"
+
+          # Obligation / coercion phrasing
+          - "you (must|have to|need to|are obligated to|are required to) (comply|obey|follow|do (as|what))"
+          - "I (order|command|instruct|demand) you to"
+          - "as your (creator|developer|admin|owner|master)"
+
+          # Output manipulation
+          - "do not (include|add|mention|apply) (any )?(disclaimer|warning|caveat|filter)"
+          - "respond without (any )?(filter|restriction|limitation|safeguard|guardrail)"
+          - "bypass (the |any |all )?(filter|restriction|limitation|safeguard|guardrail|safety|content)"
+          - "disable (the |any |all )?(filter|restriction|limitation|safeguard|guardrail|safety)"
+          - "turn off (the |any |all )?(filter|restriction|limitation|safeguard|guardrail|safety)"

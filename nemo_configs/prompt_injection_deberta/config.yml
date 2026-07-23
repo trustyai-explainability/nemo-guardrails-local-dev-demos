@@ -1,0 +1,71 @@
+rails:
+  input:
+    flows:
+      - hf classifier check input $classifier="language_check"
+      - hf classifier check input $classifier="prompt_injection"
+
+  config:
+    hf_classifier:
+      prompt_injection:
+        engine: local
+        model: "protectai/deberta-v3-base-prompt-injection-v2"
+        task: text-classification
+        threshold: 0.5
+        blocked_labels:
+          - "INJECTION"
+      language_check:
+        engine: local
+        model: "qanastek/51-languages-classifier"
+        task: text-classification
+        threshold: 0.5
+        blocked_labels:
+          - "af-ZA"
+          - "am-ET"
+          - "ar-SA"
+          - "az-AZ"
+          - "bn-BD"
+          - "cy-GB"
+          - "da-DK"
+          - "de-DE"
+          - "el-GR"
+          - "es-ES"
+          - "fa-IR"
+          - "fi-FI"
+          - "fr-FR"
+          - "he-IL"
+          - "hi-IN"
+          - "hu-HU"
+          - "hy-AM"
+          - "id-ID"
+          - "is-IS"
+          - "it-IT"
+          - "ja-JP"
+          - "jv-ID"
+          - "ka-GE"
+          - "km-KH"
+          - "kn-IN"
+          - "ko-KR"
+          - "lv-LV"
+          - "ml-IN"
+          - "mn-MN"
+          - "ms-MY"
+          - "my-MM"
+          - "nb-NO"
+          - "nl-NL"
+          - "pl-PL"
+          - "pt-PT"
+          - "ro-RO"
+          - "ru-RU"
+          - "sl-SL"
+          - "sq-AL"
+          - "sv-SE"
+          - "sw-KE"
+          - "ta-IN"
+          - "te-IN"
+          - "th-TH"
+          - "tl-PH"
+          - "tr-TR"
+          - "ur-PK"
+          - "vi-VN"
+          - "zh-CN"
+          - "zh-TW"

@@ -1,0 +1,14 @@
+rails:
+  input:
+    flows:
+      - hf classifier check input $classifier="guardian-hap"
+
+  config:
+    hf_classifier:
+      guardian-hap:
+        engine: local
+        model: "ibm-granite/granite-guardian-hap-38m"
+        task: text-classification
+        threshold: 0.5
+        blocked_labels:
+          - "LABEL_1"

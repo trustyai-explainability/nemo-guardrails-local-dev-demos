@@ -1,0 +1,5 @@
+service:
+  port: 8080
+database:
+  driver: sqlite
+  url: "file::eval_hub:?mode=memory&cache=shared"
