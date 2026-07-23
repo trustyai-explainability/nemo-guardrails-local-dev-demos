@@ -2,8 +2,8 @@
 
 Develop and evaluate [NeMo Guardrails](https://github.com/trustyai-explainability/NeMo-Guardrails) configurations on your local machine (no GPU or LLM required). This repo provides:
 
-- **Demo notebooks** for interactive guardrail config development in a local, non-GPU environment
-- **Sample NeMo configs** for prompt injection and toxicity protection
+- **[Demo notebooks](./notebooks)** for interactive guardrail config development in a local, non-GPU environment
+- [**Sample NeMo configs**](./nemo_configs) for prompt injection and toxicity protection
 - **Local evaluation** via [EvalHub](https://github.com/opendatahub-io/eval-hub) using the NeMo Guardrails adapter from [eval-hub-contrib](https://github.com/opendatahub-io/eval-hub-contrib)
 
 ## Quick Start
@@ -52,11 +52,11 @@ jupyter notebook
 
 ### Blog Post Demo
 
-`notebooks/local_guardrail_development_demo.ipynb` walks through developing and testing NeMo Guardrails configurations on your local machine. 
+[notebooks/local_guardrail_development_demo.ipynb](notebooks/local_guardrail_development_demo.ipynb) walks through developing and testing NeMo Guardrails configurations on your local machine. 
 
 ### Interactive Guardrails Playground
 
-After completing the blog post demo, use `notebooks/local_guardrail_development_playground.ipynb` as a workspace to interactively develop and test guardrail configs. 
+After completing the blog post demo, use [notebooks/local_guardrail_development_playground.ipynb](notebooks/local_guardrail_development_playground.ipynb) as a workspace to interactively develop and test guardrail configs. 
 
 
 ## NeMo Configs
